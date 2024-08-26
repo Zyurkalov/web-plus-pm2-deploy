@@ -15,6 +15,10 @@ const login = (req: Request, res: Response, next: NextFunction) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
+
+      if (!JWT_SECRET) {
+        throw new Error('JWT_SECRET не найден');
+      }
       const token = jwt.sign({ _id: user._id }, JWT_SECRET);
       return res
         .cookie('jwt', token, {
