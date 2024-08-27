@@ -1,6 +1,6 @@
 // require('dotenv').config();
 const dotenv = require('dotenv');
-dotenv.config({ path: '.env.deploy'})
+dotenv.config({ path: './.env.deploy'})
 
 const { DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPO } = process.env;
 
@@ -19,7 +19,12 @@ deploy: {
     path: DEPLOY_PATH,
     // 'pre-deploy': `scp ./*.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
     'pre-deploy': `bash scripts/deployEnv.sh ${DEPLOY_USER}@${DEPLOY_HOST} ${DEPLOY_PATH}`,
-    'post-deploy': 'cd backand && pwd && npm ci && npm run build && pm2 startOrRestart ecosystem.config.js --env production',
+    'post-deploy':
+      `cd backend &&
+      pwd &&
+      npm ci
+      && npm run build
+      && pm2 startOrRestart ecosystem.config.js --env production`,
   },
 },
 }
