@@ -19,7 +19,7 @@ module.exports = {
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
       // 'pre-deploy': `scp ./*.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
-      'post-deploy': "cd frontend && pwd && npm ci && npm run build"
+      'post-deploy': `ssh ${DEPLOY_USER}@${DEPLOY_HOST} mkdir -p mesto-backend/current/backend && cd frontend && pwd && npm ci && npm run build`
       // 'pre-deploy-local': "npm run build",
       // 'post-deploy':
       //   `cd frontend &&
