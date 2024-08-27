@@ -15,7 +15,7 @@
 
 # misc
 .env
-!.env.example
+.env.deploy
 
 .DS_Store
 .env.local
