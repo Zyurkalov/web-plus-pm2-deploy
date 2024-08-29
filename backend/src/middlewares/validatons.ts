@@ -2,8 +2,8 @@ import { Joi, celebrate } from 'celebrate';
 import { Types } from 'mongoose';
 
 // eslint-disable-next-line no-useless-escape
-// const urlRegExp = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:\/?#[\]@!$&'()*+,;=.]+$/;
-const urlRegExp = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[^\s]*$/;
+const urlRegExp = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:\/?#[\]@!$&'()*+,;=.]+$/;
+// const urlRegExp = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[^\s]*$/;
 
 const validateObjId = celebrate({
   params: Joi.object().keys({
