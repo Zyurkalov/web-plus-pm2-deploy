@@ -16,6 +16,10 @@ const auth = (req: Request, res: Response, next: NextFunction) => {
     token = token.replace('Bearer ', '');
     let payload: JwtPayload | null = null;
 
+    if (!JWT_SECRET) {
+      throw new Error('JWT_SECRET не найден');
+    }
+
     payload = jwt.verify(token, JWT_SECRET) as JwtPayload;
     req.user = payload;
     next();
