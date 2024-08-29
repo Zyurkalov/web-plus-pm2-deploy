@@ -6,7 +6,7 @@ const { DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPO } = proce
 
 module.exports = {
   apps : [{
-    name   : "mesto",
+    name   : "mesto-backend",
     script : "dist/app.js"
   },
 ],

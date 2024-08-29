@@ -7,7 +7,7 @@ const HOST_PATH = `${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`
 
 module.exports = {
   apps: [{
-    name: "mesto",
+    name: "mesto-frontend",
     script: "dist/app.js"
   },
   ],
