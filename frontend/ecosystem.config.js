@@ -6,11 +6,11 @@ const { DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPO } = proce
 const HOST_PATH = `${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`
 
 module.exports = {
-  apps: [{
-    name: "mesto-frontend",
-    script: "dist/app.js"
-  },
-  ],
+  // apps: [{
+  //   name: "mesto-frontend",
+  //   script: "dist/app.js"
+  // },
+  // ],
   deploy: {
     production: {
       user: DEPLOY_USER,
