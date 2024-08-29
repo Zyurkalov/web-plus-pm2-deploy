@@ -3,7 +3,7 @@ import { Types } from 'mongoose';
 
 // eslint-disable-next-line no-useless-escape
 // const urlRegExp = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:\/?#[\]@!$&'()*+,;=.]+$/;
-const urlRegExp = /^(?:https?:\/\/)?(?:[\w.-]+\.)+[a-zA-Z]{2,}(?:\/[\w\-._~:\/?#[\]@!$&'()*+,;=.]*)?$/;
+const urlRegExp = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[^\s]*$/;
 
 const validateObjId = celebrate({
   params: Joi.object().keys({
