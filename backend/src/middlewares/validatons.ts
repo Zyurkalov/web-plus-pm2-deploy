@@ -76,7 +76,7 @@ const validateAuthentication = celebrate({
 const validateAvatar = celebrate({
   body: {
     avatar: Joi.string().required().pattern(urlRegExp)
-      .message('Поле "avatar" должно быть валидным url-адресом')
+      .message('Поле "avatar" должно быть валидным url-адресом validateAvatar')
       .messages({
         'string.empty': 'Поле "avatar" должно быть заполнено',
       }),
