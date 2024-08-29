@@ -25,7 +25,7 @@ const validateCardBody = celebrate({
         'string.empty': 'Поле "name" должно быть заполнено',
       }),
     link: Joi.string().required().pattern(urlRegExp)
-      .message('Поле "avatar" должно быть валидным url-адресом validateCardBody')
+      .message('Поле "avatar" должно быть валидным url-адресом')
       .messages({
         'string.empty': 'Поле "link" должно быть заполнено',
       }),
@@ -55,7 +55,7 @@ const validateUserBody = celebrate({
       }),
     avatar: Joi.string()
       .pattern(urlRegExp)
-      .message('Поле "avatar" должно быть валидным url-адресом validateUserBody'),
+      .message('Поле "avatar" должно быть валидным url-адресом'),
   }),
 });
 
@@ -76,7 +76,7 @@ const validateAuthentication = celebrate({
 const validateAvatar = celebrate({
   body: {
     avatar: Joi.string().required().pattern(urlRegExp)
-      .message('Поле "avatar" должно быть валидным url-адресом validateAvatar')
+      .message('Поле "avatar" должно быть валидным url-адресом')
       .messages({
         'string.empty': 'Поле "avatar" должно быть заполнено',
       }),
